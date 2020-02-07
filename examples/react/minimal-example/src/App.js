@@ -18,16 +18,17 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const endpoint = "CHANGE_ME: JAVASCRIPT ENDPOINT";
-    const publicKey = "CHANGE_ME: YOUR PUBLIC KEY";
+    const endpoint = "https://api.payzen.eu";
+    const publicKey = "33148340:testpublickey_l83P7WpRK2hoUIcWyFVQsd4Omsz0XbCKYtNKeGbpX6CvS";
     const formToken = "DEMO-TOKEN-TO-BE-REPLACED";
 
     KRGlue.loadLibrary(endpoint, publicKey) /* Load the remote library */
       .then(({ KR }) =>
         KR.setFormConfig({
-          /* set the minimal configuration */
-          formToken: formToken,
-          "kr-language": "en-US" /* to update initialization parameter */
+           /* set the minimal configuration */
+           formToken: formToken,
+           "kr-post-url-success":"https://finense.pagekite.me/",
+           "kr-language": "fr-FR"
         })
       )
       .then(({ KR }) =>
